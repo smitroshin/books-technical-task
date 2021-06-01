@@ -1,0 +1,68 @@
+---
+# This config is created for create-react-app application, what can have some specific configuration under hood.
+
+# Install dependencies command:
+# npx install-peerdeps --dev eslint-config-airbnb && npm i -D prettier eslint-config-prettier
+# or
+# npm i -D eslint eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks prettier eslint-config-prettier
+
+# Notes:
+# eslint-config-airbnb
+# Depends on:
+# - eslint-plugin-jsx-a11y - Static AST checker for accessibility rules on JSX elements.
+# - eslint-plugin-import - Support import/export syntax, and prevent issues with misspelling of file paths and import names.
+# - eslint-plugin-react - React specific linting rules for ESLint
+# - eslint-plugin-react-hooks - This ESLint plugin enforces the Rules of Hooks.
+# eslint-config-airbnb includes all of them.
+
+# react-app/jest - Includes eslint-plugin-jest, eslint-plugin-testing-library
+
+# prettier - Code formatter.
+# eslint-config-prettier - Turns off all rules that are unnecessary or might conflict with Prettier. Note that this config only turns rules off, so it only makes sense using it together with some other config.
+# eslint-plugin-prettier - Runs Prettier as an ESLint rule and reports differences as individual ESLint issues. DON'T USE IT!!! There is explanation - https://prettier.io/docs/en/integrating-with-linters.html.
+
+parser: babel-eslint
+env:
+  browser: true
+  commonjs: true
+  es6: true
+  node: true
+settings:
+  react:
+    version: detect
+  # Absolute paths
+  # import/resolver:
+  #   node:
+  #     paths:
+  #       - src
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: module
+  ecmaFeatures:
+    jsx: true
+extends:
+  - eslint:recommended # common js problems
+  - react-app
+  - react-app/jest
+  - airbnb
+  - airbnb/hooks
+  - prettier
+rules:
+  no-unused-vars: 'warn'
+  spaced-comment: 'off'
+  react/display-name: 'off'
+  react/jsx-filename-extension: 'off'
+  react/react-in-jsx-scope: 'off'
+  react/jsx-props-no-spreading: 'off'
+  react/destructuring-assignment: 'off'
+  react/forbid-prop-types: 'off'
+  react/no-array-index-key: 'off'
+  react/no-unused-prop-types: 'off'
+  react/jsx-curly-brace-presence: 'off'
+  import/no-cycle: 'off'
+  import/prefer-default-export: 'off'
+  import/order: 'warn'
+  camelcase: 'off'
+  no-restricted-globals: 'off'
+  no-console: 'off'
+  react/no-danger: 'off'

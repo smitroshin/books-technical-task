@@ -1,0 +1,22 @@
+@import '../../styles/utils';
+
+.book-card {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .ant-card-cover {
+    height: 250px;
+  }
+  .ant-card-actions {
+    margin-top: auto;
+  }
+  &__img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+  &__action-ic {
+    font-size: 20px;
+  }
+}
